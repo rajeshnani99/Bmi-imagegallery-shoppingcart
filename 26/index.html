@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        <div class="image-container">
+            <div class="image">
+                <img src="./images/adult-3826989.jpg" alt="one">
+            </div>
+            <div class="image">
+                <img src="./images/naruto-3757871.jpg" alt="one">
+            </div>
+            <div class="image">
+                <img src="./images/toy-3762868.jpg" alt="one">
+            </div>
+            <div class="image">
+                <img src="./images/war-4489651.jpg" alt="one">
+            </div>
+            <div class="image">
+                <img src="./images/young-3760179.jpg" alt="one">
+            </div>
+            <div class="image">
+                <img src="./images/young-3890799.jpg" alt="one">
+            </div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="./images/adult-3826989.jpg" alt="one">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll(".image-container img").forEach(image => {
+            image.onclick = () => {
+                document.querySelector(".popup-image").style.display = "block";
+                document.querySelector(".popup-image img").src = image.getAttribute("src");
+            }
+
+        })
+        document.querySelector(".popup-image span").onclick = () => {
+            document.querySelector(".popup-image").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
